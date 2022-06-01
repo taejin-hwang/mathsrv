@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-chi/chi"
+	"github.com/taejin-hwang/mathsrv/handlers"
 	"net"
 	"net/http"
 	"strconv"
@@ -36,7 +37,7 @@ func NewServer(host string, port int) *MathSrv {
 }
 
 func (s *MathSrv) setupRoutes() {
-	// no-op
+	handlers.Health(s.Mux)
 }
 
 func (s *MathSrv) Start() error {
